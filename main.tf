@@ -109,16 +109,16 @@ resource "aws_route_table_association" "public-b-association" {
 # Шлюз NAT
 
 resource "aws_eip" "nat-a" {
-  vpc = true
-  tags = {
-    "Name" = "${local.vpc_name}-NAT-a"
+  domain    = "vpc"
+  tags      = {
+    "Name"  = "${local.vpc_name}-NAT-a"
   }
 }
 
 resource "aws_eip" "nat-b" {
-  vpc = true
-  tags = {
-    "Name" = "${local.vpc_name}-NAT-b"
+  domain    = "vpc"
+  tags      = {
+    "Name"  = "${local.vpc_name}-NAT-b"
   }
 }
 
